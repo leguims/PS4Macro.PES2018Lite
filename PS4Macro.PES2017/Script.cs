@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace PS4Macro.PES2017
 {
@@ -31,6 +32,9 @@ namespace PS4Macro.PES2017
                 new Sim.SkipIntroByOption(),
                 new Sim.SkipEndGame(),
             };
+            // Print version
+            Console.WriteLine("{0} version {1}", typeof(Script).Assembly.GetName().Name, typeof(Script).Assembly.GetName().Version);                    /* to print to the built-in console */
+            System.Diagnostics.Debug.WriteLine("{0} version {1}", typeof(Script).Assembly.GetName().Name, typeof(Script).Assembly.GetName().Version);   /* to print to "Output" console in Visual Studio. */
         }
 
         public override void Start()

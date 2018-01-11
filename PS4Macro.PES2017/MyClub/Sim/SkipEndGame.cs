@@ -36,7 +36,7 @@ namespace PS4Macro.PES2017.Sim
         public override bool Match(ScriptBase script)
         {
             /* DEBUG */
-            Log.LogMatchTemplate(script, Name, new List<RectMap> { divisionFooter });
+            Log.LogMatchTemplate(script, Name, new List<RectMap> { divisionHeader, divisionFooter });
 
             return script.MatchTemplate(divisionHeader, 98) && script.MatchTemplate(divisionFooter, 98);
         }

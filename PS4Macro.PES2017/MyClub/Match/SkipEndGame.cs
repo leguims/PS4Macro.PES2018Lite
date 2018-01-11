@@ -133,6 +133,24 @@ namespace PS4Macro.PES2017.Match
             Hash = 9187201402835861375
         };
 
+        private static RectMap seasonPromote = new RectMap()
+        {
+            ID = "seasonPromote",
+            Width = 1008,
+            Height = 729,
+            Hash = 68719468281856
+        };
+
+        private static RectMap seasonPromoteFocus = new RectMap()
+        {
+            ID = "seasonPromoteFocus",
+            X = 386,
+            Y = 373,
+            Width = 158,
+            Height = 18,
+            Hash = 9187201402835861375
+        };
+
         public override bool Match(ScriptBase script)
         {
             /* DEBUG */
@@ -143,7 +161,7 @@ namespace PS4Macro.PES2017.Match
                 || script.MatchTemplate(experienceLevelUp, 98) || script.MatchTemplate(teamRank, 98)
                 || script.MatchTemplate(earnings1Focus, 98) || script.MatchTemplate(earnings2Focus, 98)
                 || script.MatchTemplate(managerExtension, 98) || script.MatchTemplate(seasonResultsFocus, 98)
-                || script.MatchTemplate(seasonMaintainFocus, 98);
+                || script.MatchTemplate(seasonMaintainFocus, 98) || script.MatchTemplate(seasonPromoteFocus, 98);
         }
 
         public override void OnMatched(ScriptBase script) => script.Press(new DualShockState() { Cross = true });

@@ -25,6 +25,32 @@ namespace PS4Macro.PES2017.Sim
             Hash = 9187192606750703487
         };
 
+        private static RectMap division = new RectMap()
+        {
+            ID = "division",
+            Width = 1008,
+            Height = 729,
+            Hash = 68719468314368
+        };
+
+        private static RectMap divisionHeader = new RectMap()
+        {
+            ID = "divisionHeader",
+            Width = 1008,
+            Height = 188,
+            Hash = 1073708927
+        };
+
+        private static RectMap divisionFooter = new RectMap()
+        {
+            ID = "divisionFooter",
+            X = 0,
+            Y = 566,
+            Width = 1008,
+            Height = 163,
+            Hash = 9187167584464666624
+        };
+
         private static RectMap teamDescription = new RectMap()
         {
             ID = "teamDescription",
@@ -46,9 +72,11 @@ namespace PS4Macro.PES2017.Sim
         public override bool Match(ScriptBase script)
         {
             /* DEBUG */
-            Log.LogMatchTemplate(script, Name, new List<RectMap> { newSeasonFocus, teamDescriptionFocus });
+            Log.LogMatchTemplate(script, Name, new List<RectMap> { newSeasonFocus, divisionFooter, teamDescriptionFocus });
 
-            return script.MatchTemplate(newSeasonFocus, 98) || script.MatchTemplate(teamDescriptionFocus, 98);
+            return script.MatchTemplate(newSeasonFocus, 98)
+                || script.MatchTemplate(divisionHeader, 98) || script.MatchTemplate(divisionFooter, 98)
+                || script.MatchTemplate(teamDescriptionFocus, 98);
         }
 
         public override void OnMatched(ScriptBase script) => script.Press(new DualShockState() { Cross = true });
