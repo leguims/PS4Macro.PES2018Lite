@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -77,6 +78,34 @@ namespace PS4Macro.PES2017
             {
                 Console.WriteLine("  * {0} : {1}", name, text);                     /* to print to the built-in console */
                 System.Diagnostics.Debug.WriteLine("  * {0} : {1}", name, text);    /* to print to "Output" console in Visual Studio. */
+            }
+        }
+
+        public static void Log2File(string name, string text)
+        {
+            if (_debug)
+            {
+                try
+                {
+                    //Open the File
+                    StreamWriter sw = new StreamWriter("log.txt", true, Encoding.UTF8);
+
+                    //Writeout the text.
+                    sw.Write("[{2}] {0} : {1}", name, text, DateTime.Now.ToString());     /* to print to the log file */
+                    Console.WriteLine("  * {0} : {1}", name, text);                     /* to print to the built-in console */
+                    System.Diagnostics.Debug.WriteLine("  * {0} : {1}", name, text);    /* to print to "Output" console in Visual Studio. */
+
+                    //close the file
+                    sw.Close();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Exception: " + e.Message);
+                }
+                finally
+                {
+                    Console.WriteLine("Executing finally block.");
+                }
             }
         }
     }

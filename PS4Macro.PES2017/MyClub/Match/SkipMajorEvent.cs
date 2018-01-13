@@ -25,6 +25,12 @@ namespace PS4Macro.PES2017.Match
             return script.MatchTemplate(majorEvents, 98);
         }
 
-        public override void OnMatched(ScriptBase script) => script.Press(new DualShockState() { Options = true });
+        public override void OnMatched(ScriptBase script)
+        {
+            script.Press(new DualShockState() { Options = true });
+
+            /* Register Match and date */
+            Log.Log2File(Name, "Ending match");
+        }
     }
 }

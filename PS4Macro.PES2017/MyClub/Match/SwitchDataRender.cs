@@ -47,6 +47,9 @@ namespace PS4Macro.PES2017.Match
             script.Press(new DualShockState() { Triangle = true });
             /* To restart AutomateMatch next time */
             MyClub.Sim.AutomateMatch.Instance.MatchDone();
+
+            /* Register Match and date */
+            Log.Log2File(Name, "Starting match");
         }
     }
 }

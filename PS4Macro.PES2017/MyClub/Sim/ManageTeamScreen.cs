@@ -97,6 +97,7 @@ namespace PS4Macro.PES2017.Sim
                     }
                     else
                     {
+                        script.Press(new DualShockState() { Circle = true });
                         Log.LogMessage(Name, "Failed to read team number.");
                     }
                     break;
