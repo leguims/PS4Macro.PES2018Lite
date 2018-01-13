@@ -91,7 +91,7 @@ namespace PS4Macro.PES2017
                     StreamWriter sw = new StreamWriter("log.txt", true, Encoding.UTF8);
 
                     //Writeout the text.
-                    sw.Write("[{2}] {0} : {1}", name, text, DateTime.Now.ToString());     /* to print to the log file */
+                    sw.WriteLine("[{2}] {0} : {1}", name, text, DateTime.Now.ToString());     /* to print to the log file */
                     Console.WriteLine("  * {0} : {1}", name, text);                     /* to print to the built-in console */
                     System.Diagnostics.Debug.WriteLine("  * {0} : {1}", name, text);    /* to print to "Output" console in Visual Studio. */
 
