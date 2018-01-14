@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace PS4Macro.PES2017.Root
+namespace PS4Macro.PES2018Lite.Root
 {
     class SkipIntro : Scene
     {

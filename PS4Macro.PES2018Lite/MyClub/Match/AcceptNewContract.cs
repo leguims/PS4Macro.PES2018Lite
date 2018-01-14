@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Collections.Generic;
 
-namespace PS4Macro.PES2017.Match
+namespace PS4Macro.PES2018Lite.Match
 {
     class AcceptNewContract : Scene
     {

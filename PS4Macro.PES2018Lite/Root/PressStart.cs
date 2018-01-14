@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PS4Macro.PES2017.Root
+namespace PS4Macro.PES2018Lite.Root
 {
     class PressStart : Scene
     {

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 
-namespace PS4Macro.PES2017
+namespace PS4Macro.PES2018Lite
 {
     public class Script : ScriptBase
     {

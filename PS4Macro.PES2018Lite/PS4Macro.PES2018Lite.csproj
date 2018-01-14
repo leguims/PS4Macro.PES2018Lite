@@ -7,8 +7,8 @@
     <ProjectGuid>{6ED8AE13-80E7-4D39-93F2-41889975A8A1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PS4Macro.PES2017</RootNamespace>
-    <AssemblyName>PS4Macro.PES2017</AssemblyName>
+    <RootNamespace>PS4Macro.PES2018Lite</RootNamespace>
+    <AssemblyName>PS4Macro.PES2018Lite</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

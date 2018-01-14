@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PS4Macro.PES2017.MyClub.Sim
+namespace PS4Macro.PES2018Lite.MyClub.Sim
 {
     /* SINGLETON */
     public sealed class AutomateMatch

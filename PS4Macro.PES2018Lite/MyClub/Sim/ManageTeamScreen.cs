@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Collections.Generic;
 
-namespace PS4Macro.PES2017.Sim
+namespace PS4Macro.PES2018Lite.Sim
 {
     class ManageTeamScreen : Scene
     {

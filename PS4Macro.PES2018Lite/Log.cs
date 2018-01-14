@@ -6,7 +6,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PS4Macro.PES2017
+namespace PS4Macro.PES2018Lite
 {
     class Log
     {
