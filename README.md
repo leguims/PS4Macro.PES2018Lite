@@ -21,7 +21,7 @@ None
 
 ## Usage
 
-1. Open PS4Macro.PES2017.dll in PS4 Macro.
+1. Open PS4Macro.PES2018Lite.dll in PS4 Macro.
 2. Press play
 
 ## To-Do List
