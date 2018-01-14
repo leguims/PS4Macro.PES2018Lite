@@ -17,6 +17,7 @@ None
 - Skip all screen
 - Renew player/manager with GP money
 - Switch team every match (need 2 teams)
+- log into file time for starting and ending match
 
 ## Usage
 
@@ -28,6 +29,8 @@ None
 - Rename picture name for traceability to C# code.
 - Stop play when cash is lower than 10.000
 - Display history (cash, renew players name/cost, match score, list of opponent players/level, cash earning)
+- Display debug on nice window
+- Use OCR instead of picture recognition
 
 
 ## Resources
