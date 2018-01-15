@@ -30,7 +30,7 @@ namespace PS4Macro.PES2018Lite.MyClub.Sim
 
         /* *** EXTERNAL EVENTS **** */
         /* Carefull, there is no protection when switching state value */
-        public enum Team { unknown, one, two };
+        public enum Team { unknown, winOne, winTwo, loseOne, loseTwo };
         private Team _teamNumber;
         public Team TeamNumber { get => _teamNumber; set => _teamNumber = value; }
 

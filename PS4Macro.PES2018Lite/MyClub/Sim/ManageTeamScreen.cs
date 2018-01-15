@@ -46,24 +46,44 @@ namespace PS4Macro.PES2018Lite.Sim
             Hash = 18410861084870082688
         };
 
-        private static RectMap team1Focus = new RectMap()
+        private static RectMap team_WinOne_Focus = new RectMap()
         {
-            ID = "team1Focus",
-            X = 491,
-            Y = 112,
-            Width = 12,
-            Height = 20,
-            Hash = 2053187362082027647
+            ID = "team-Win1-Focus",
+            X = 407,
+            Y = 111,
+            Width = 91,
+            Height = 21,
+            Hash = 28266779591343228
         };
 
-        private static RectMap team2Focus = new RectMap()
+        private static RectMap teamWinTwo_Focus = new RectMap()
         {
-            ID = "team2Focus",
-            X = 491,
-            Y = 112,
-            Width = 12,
-            Height = 20,
-            Hash = 1764926229666064254
+            ID = "team-WinTwo-Focus",
+            X = 407,
+            Y = 111,
+            Width = 91,
+            Height = 21,
+            Hash = 12455815319355199
+        };
+
+        private static RectMap team_LoseOne_Focus = new RectMap()
+        {
+            ID = "team-Lose1-Focus",
+            X = 408,
+            Y = 111,
+            Width = 98,
+            Height = 21,
+            Hash = 1130556661988604
+        };
+
+        private static RectMap team_LoseTwo_Focus = new RectMap()
+        {
+            ID = "team-LoseTwo-Focus",
+            X = 408,
+            Y = 111,
+            Width = 100,
+            Height = 21,
+            Hash = 1130569597419519
         };
 
         public override bool Match(ScriptBase script)
@@ -81,19 +101,23 @@ namespace PS4Macro.PES2018Lite.Sim
             {
                 case MyClub.Sim.AutomateMatch.ManageTeamAction.readTeamNumber:
                     Log.LogMessage(Name, "Read team number.");
-                    Log.LogMatchTemplate(script, Name, new List<RectMap> { team1Focus, team2Focus });
+                    Log.LogMatchTemplate(script, Name, new List<RectMap> { team_WinOne_Focus, teamWinTwo_Focus, team_LoseOne_Focus, team_LoseTwo_Focus });
 
                     MyClub.Sim.AutomateMatch.Team t;
-                    if (script.MatchTemplate(team1Focus, 98))
-                        t = MyClub.Sim.AutomateMatch.Team.one;
-                    else if (script.MatchTemplate(team2Focus, 98))
-                        t = MyClub.Sim.AutomateMatch.Team.two;
+                    if (script.MatchTemplate(team_WinOne_Focus, 98))
+                        t = MyClub.Sim.AutomateMatch.Team.winOne;
+                    else if (script.MatchTemplate(teamWinTwo_Focus, 98))
+                        t = MyClub.Sim.AutomateMatch.Team.winTwo;
+                    else if (script.MatchTemplate(team_LoseOne_Focus, 98))
+                        t = MyClub.Sim.AutomateMatch.Team.loseOne;
+                    else if (script.MatchTemplate(team_LoseTwo_Focus, 98))
+                        t = MyClub.Sim.AutomateMatch.Team.loseTwo;
                     else
                         t = MyClub.Sim.AutomateMatch.Team.unknown;
                     if (t != MyClub.Sim.AutomateMatch.Team.unknown)
                     {
                         MyClub.Sim.AutomateMatch.Instance.ReadTeamNumberDone(t);
-                        Log.LogMessage(Name, "Read team number = " + t.ToString());
+                        Log.LogMessage(Name, "Read team number = " + t.ToString()); Thread.Sleep(5000);
                     }
                     else
                     {
@@ -102,8 +126,29 @@ namespace PS4Macro.PES2018Lite.Sim
                     }
                     break;
                 case MyClub.Sim.AutomateMatch.ManageTeamAction.switchTeams:
-                    Log.LogMessage(Name, "Switch to team " + MyClub.Sim.AutomateMatch.Instance.TeamNumber.ToString() + ".");
-                    SwitchTeam(script, MyClub.Sim.AutomateMatch.Instance.TeamNumber);
+                    MyClub.Sim.AutomateMatch.Team from, to;
+                    from = MyClub.Sim.AutomateMatch.Instance.TeamNumber;
+                    switch (from)
+                    {
+                        case MyClub.Sim.AutomateMatch.Team.loseOne:
+                            to = MyClub.Sim.AutomateMatch.Team.loseTwo;
+                            break;
+                        case MyClub.Sim.AutomateMatch.Team.loseTwo:
+                            to = MyClub.Sim.AutomateMatch.Team.loseOne;
+                            break;
+                        case MyClub.Sim.AutomateMatch.Team.winOne:
+                            to = MyClub.Sim.AutomateMatch.Team.winTwo;
+                            break;
+                        case MyClub.Sim.AutomateMatch.Team.winTwo:
+                            to = MyClub.Sim.AutomateMatch.Team.winOne;
+                            break;
+                        case MyClub.Sim.AutomateMatch.Team.unknown:
+                        default:
+                            to = MyClub.Sim.AutomateMatch.Team.unknown;
+                            break;
+                    }
+                    Log.LogMessage(Name, "Switch from team " + from.ToString() + " to " + to.ToString() + ".");
+                    SwitchTeam(script, to);
                     MyClub.Sim.AutomateMatch.Instance.SwitchTeamDone();
                     break;
                 case MyClub.Sim.AutomateMatch.ManageTeamAction.exit:
@@ -120,27 +165,60 @@ namespace PS4Macro.PES2018Lite.Sim
 
         private void SwitchTeam(ScriptBase script, MyClub.Sim.AutomateMatch.Team team)
         {
-            if (team == MyClub.Sim.AutomateMatch.Team.one)
+            if (team == MyClub.Sim.AutomateMatch.Team.winTwo)
             {
                 script.Press(new DualShockState() { Triangle = true });
                 script.Press(new DualShockState() { DPad_Down = true });
                 script.Press(new DualShockState() { Cross = true });
                 Thread.Sleep(5000);
+                /* Select Team.win2 - Add short pause between same key */
+                script.Press(new DualShockState() { DPad_Down = true });
+                Thread.Sleep(100);
                 script.Press(new DualShockState() { DPad_Down = true });
                 script.Press(new DualShockState() { Cross = true });
             }
-            else if (team == MyClub.Sim.AutomateMatch.Team.two)
+            if (team == MyClub.Sim.AutomateMatch.Team.winOne)
             {
                 script.Press(new DualShockState() { Triangle = true });
                 script.Press(new DualShockState() { DPad_Down = true });
                 script.Press(new DualShockState() { Cross = true });
                 Thread.Sleep(5000);
+                /* Select Team.win1 - Add short pause between same key */
                 script.Press(new DualShockState() { DPad_Down = true });
+                Thread.Sleep(100);
+                script.Press(new DualShockState() { DPad_Down = true });
+                Thread.Sleep(100);
+                script.Press(new DualShockState() { DPad_Down = true });
+                script.Press(new DualShockState() { Cross = true });
+            }
+             if (team == MyClub.Sim.AutomateMatch.Team.loseTwo)
+            {
+                script.Press(new DualShockState() { Triangle = true });
+                script.Press(new DualShockState() { DPad_Down = true });
+                script.Press(new DualShockState() { Cross = true });
+                Thread.Sleep(5000);
+                /* Select Team.lose2 - Add short pause between same key */
+                script.Press(new DualShockState() { DPad_Down = true });
+                script.Press(new DualShockState() { Cross = true });
+            }
+            else if (team == MyClub.Sim.AutomateMatch.Team.loseOne)
+            {
+                script.Press(new DualShockState() { Triangle = true });
+                script.Press(new DualShockState() { DPad_Down = true });
+                script.Press(new DualShockState() { Cross = true });
+                Thread.Sleep(5000);
+                /* Select Team.lose1 - Add short pause between same key */
+                script.Press(new DualShockState() { DPad_Down = true });
+                Thread.Sleep(100);
+                script.Press(new DualShockState() { DPad_Down = true });
+                Thread.Sleep(100);
+                script.Press(new DualShockState() { DPad_Down = true });
+                Thread.Sleep(100);
                 script.Press(new DualShockState() { DPad_Down = true });
                 script.Press(new DualShockState() { Cross = true });
             }
 
-            Log.LogMessage(Name, "Switch to team " + MyClub.Sim.AutomateMatch.Instance.TeamNumber.ToString() + " : OK.");
+            Log.LogMessage(Name, "Switch to team " + team.ToString() + " : OK.");
         }
     }
 }
