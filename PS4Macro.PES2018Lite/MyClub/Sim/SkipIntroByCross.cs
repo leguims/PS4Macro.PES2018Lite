@@ -72,10 +72,10 @@ namespace PS4Macro.PES2018Lite.Sim
         public override bool Match(ScriptBase script)
         {
             /* DEBUG */
-            Log.LogMatchTemplate(script, Name, new List<RectMap> { newSeasonFocus, divisionFooter, teamDescriptionFocus });
+            Log.LogMatchTemplate(script, Name, new List<RectMap> { newSeasonFocus, divisionHeader, divisionFooter, teamDescriptionFocus });
 
             return script.MatchTemplate(newSeasonFocus, 98)
-                || script.MatchTemplate(divisionHeader, 98) || script.MatchTemplate(divisionFooter, 98)
+                || script.MatchTemplate(divisionHeader, 98) && script.MatchTemplate(divisionFooter, 98)
                 || script.MatchTemplate(teamDescriptionFocus, 98);
         }
 

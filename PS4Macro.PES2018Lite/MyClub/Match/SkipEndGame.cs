@@ -43,12 +43,14 @@ namespace PS4Macro.PES2018Lite.Match
             Hash = 140187724087296
         };
 
-        private static RectMap experienceLevelUp = new RectMap()
+        private static RectMap experienceLevelUpFocus = new RectMap()
         {
-            ID = "experienceLevelUp",
-            Width = 1008,
-            Height = 729,
-            Hash = 280315099684864
+            ID = "experienceLevelUpFocus",
+            X = 55,
+            Y = 143,
+            Width = 540,
+            Height = 43,
+            Hash = 33910008047466616
         };
 
         private static RectMap teamRank = new RectMap()
@@ -154,11 +156,12 @@ namespace PS4Macro.PES2018Lite.Match
         public override bool Match(ScriptBase script)
         {
             /* DEBUG */
-            Log.LogMatchTemplate(script, Name, new List<RectMap> { stats1, stats1FocusHeader, stats1FocusFooter, experience, experienceLevelUp,
-                earnings1Focus, earnings2Focus, managerExtension, seasonResultsFocus, seasonMaintainFocus });
+            Log.LogMatchTemplate(script, Name, new List<RectMap> { stats1, stats1FocusHeader, stats1FocusFooter, experience, experienceLevelUpFocus,
+                earnings1Focus, earnings2Focus, managerExtension, seasonResultsFocus, seasonMaintainFocus, seasonPromoteFocus });
 
-            return script.MatchTemplate(stats1FocusFooter, 98) || script.MatchTemplate(experience, 98) 
-                || script.MatchTemplate(experienceLevelUp, 98) || script.MatchTemplate(teamRank, 98)
+            return script.MatchTemplate(stats1FocusFooter, 98) 
+                || script.MatchTemplate(experience, 98) 
+                || script.MatchTemplate(experienceLevelUpFocus, 98) || script.MatchTemplate(teamRank, 98)
                 || script.MatchTemplate(earnings1Focus, 98) || script.MatchTemplate(earnings2Focus, 98)
                 || script.MatchTemplate(managerExtension, 98) || script.MatchTemplate(seasonResultsFocus, 98)
                 || script.MatchTemplate(seasonMaintainFocus, 98) || script.MatchTemplate(seasonPromoteFocus, 98);

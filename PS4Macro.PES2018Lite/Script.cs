@@ -18,19 +18,21 @@ namespace PS4Macro.PES2018Lite
             Config.TargetSize = new Size(1024, 768);
             Config.Scenes = new List<Scene>()
             {
-                new Root.SkipIntro(),
-                new Root.PressStart(),
-                new Root.LaunchMyClub(),
-                new Match.SwitchDataRender(),
-                new Match.SkipHalfTime(),
-                new Match.SkipMajorEvent(),
-                new Match.SkipEndGame(),
-                new Match.AcceptNewContract(),
+                /* Sorted by frequency of usage : 1rst most usefull */
                 new Sim.ClubHouseScreen(),
                 new Sim.ManageTeamScreen(),
                 new Sim.SkipIntroByCross(),
                 new Sim.SkipIntroByOption(),
                 new Sim.SkipEndGame(),
+                new Match.SwitchDataRender(),
+                new Match.SkipHalfTime(),
+                new Match.SkipMajorEvent(),
+                new Match.SkipEndGame(),
+                new Match.AcceptNewContract(),
+                new Root.SkipIntro(),
+                new Root.PressStart(),
+                new Root.LaunchMyClub(),
+                new Root.None(),
             };
             // Print version
             Console.WriteLine("{0} version {1}", typeof(Script).Assembly.GetName().Name, typeof(Script).Assembly.GetName().Version);                    /* to print to the built-in console */
@@ -47,9 +49,8 @@ namespace PS4Macro.PES2018Lite
             /* Here, script's treatments */
             HandleScenes( scene =>
             {
-                Console.WriteLine(scene.Name);
-                System.Diagnostics.Debug.WriteLine(scene.Name);
-
+                Console.WriteLine("=> {0}", scene.Name);
+                System.Diagnostics.Debug.WriteLine("=> {0}", scene.Name);
             });
         }
     }

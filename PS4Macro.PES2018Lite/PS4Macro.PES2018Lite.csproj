@@ -59,6 +59,7 @@
     <Compile Include="MyClub\Sim\SkipIntroByOption.cs" />
     <Compile Include="Root\PressStart.cs" />
     <Compile Include="Root\LaunchMyClub.cs" />
+    <Compile Include="Root\None.cs" />
     <Compile Include="Root\SkipIntro.cs" />
     <Compile Include="Script.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
