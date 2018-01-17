@@ -19,6 +19,10 @@ None
 - Switch team every match (need 2 teams)
 - log into file time for starting and ending match
 
+## Install & Compile
+1. From [PS4 Macro](https://github.com/komefai/PS4Macro), copy the file PS4MacroAPI.dll to [repository root]\PS4Macro.PES2018Lite\dll
+2. Compile the solution
+
 ## Usage
 
 1. Open PS4Macro.PES2018Lite.dll in PS4 Macro.
