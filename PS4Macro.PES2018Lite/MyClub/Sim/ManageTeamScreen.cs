@@ -8,47 +8,39 @@ namespace PS4Macro.PES2018Lite.Sim
     {
         public override string Name => "Sim : Manage Team Screen";
 
-        private static RectMap manageteam = new RectMap()
-        {
-            ID = "manageTeam",
-            Width = 1008,
-            Height = 729,
-            Hash = 137426018008064
-        };
-
         private static RectMap manageteamfocus1 = new RectMap()
         {
-            ID = "manageteamfocus1",
-            X = 75,
-            Y = 210,
-            Width = 74,
-            Height = 74,
-            Hash = 7947537377664062
+            ID = "Sim-ManageTeamScreen-manageteamfocus1.png",
+            X = 79,
+            Y = 212,
+            Width = 66,
+            Height = 73,
+            Hash = 7949736401058878
         };
 
         private static RectMap manageteamfocus2 = new RectMap()
         {
-            ID = "manageteamfocus2",
-            X = 63,
-            Y = 525,
-            Width = 54,
-            Height = 60,
-            Hash = 9187515436292145281
+            ID = "Sim-ManageTeamScreen-manageteamfocus2.png",
+            X = 68,
+            Y = 529,
+            Width = 43,
+            Height = 51,
+            Hash = 68437053160960
         };
 
         private static RectMap manageteamfocus3 = new RectMap()
         {
-            ID = "manageteamfocus3",
-            X = 590,
-            Y = 525,
-            Width = 52,
-            Height = 59,
-            Hash = 18410861084870082688
+            ID = "Sim-ManageTeamScreen-manageteamfocus3.png",
+            X = 594,
+            Y = 529,
+            Width = 44,
+            Height = 50,
+            Hash = 31045067881472
         };
 
         private static RectMap team_WinOne_Focus = new RectMap()
         {
-            ID = "team-Win1-Focus",
+            ID = "Sim-ManageTeamScreen-team-Win1-Focus.png",
             X = 407,
             Y = 111,
             Width = 91,
@@ -58,7 +50,7 @@ namespace PS4Macro.PES2018Lite.Sim
 
         private static RectMap teamWinTwo_Focus = new RectMap()
         {
-            ID = "team-WinTwo-Focus",
+            ID = "Sim-ManageTeamScreen-team-WinTwo-Focus.png",
             X = 407,
             Y = 111,
             Width = 91,
@@ -68,7 +60,7 @@ namespace PS4Macro.PES2018Lite.Sim
 
         private static RectMap team_LoseOne_Focus = new RectMap()
         {
-            ID = "team-Lose1-Focus",
+            ID = "Sim-ManageTeamScreen-team-Lose1-Focus.png",
             X = 408,
             Y = 111,
             Width = 98,
@@ -78,7 +70,7 @@ namespace PS4Macro.PES2018Lite.Sim
 
         private static RectMap team_LoseTwo_Focus = new RectMap()
         {
-            ID = "team-LoseTwo-Focus",
+            ID = "Sim-ManageTeamScreen-team-LoseTwo-Focus.png",
             X = 408,
             Y = 111,
             Width = 100,
@@ -89,9 +81,9 @@ namespace PS4Macro.PES2018Lite.Sim
         public override bool Match(ScriptBase script)
         {
             /* DEBUG */
-            Log.LogMatchTemplate(script, Name, new List<RectMap> { manageteamfocus1, manageteamfocus2, manageteamfocus3 });
+            Log.LogMatchTemplate(script, Name, new List<RectMap> { manageteamfocus1, manageteamfocus2, manageteamfocus3 }, 95);
 
-            return script.MatchTemplate(manageteamfocus1, 98) && script.MatchTemplate(manageteamfocus2, 98) && script.MatchTemplate(manageteamfocus3, 98);
+            return script.MatchTemplate(manageteamfocus1, 95) && script.MatchTemplate(manageteamfocus2, 95) && script.MatchTemplate(manageteamfocus3, 95);
         }
 
         public override void OnMatched(ScriptBase script)

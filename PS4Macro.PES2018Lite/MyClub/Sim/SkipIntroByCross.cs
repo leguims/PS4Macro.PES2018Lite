@@ -7,17 +7,9 @@ namespace PS4Macro.PES2018Lite.Sim
     {
         public override string Name => "Sim : Skip Intro By Cross";
 
-        private static RectMap newSeason = new RectMap()
-        {
-            ID = "newSeason",
-            Width = 1008,
-            Height = 729,
-            Hash = 68717320814080
-        };
-
         private static RectMap newSeasonFocus = new RectMap()
         {
-            ID = "newSeasonFocus",
+            ID = "Sim-SkipIntroByCross-newSeasonFocus.png",
             X = 361,
             Y = 301,
             Width = 286,
@@ -25,17 +17,9 @@ namespace PS4Macro.PES2018Lite.Sim
             Hash = 9187192606750703487
         };
 
-        private static RectMap division = new RectMap()
-        {
-            ID = "division",
-            Width = 1008,
-            Height = 729,
-            Hash = 68719468314368
-        };
-
         private static RectMap divisionHeader = new RectMap()
         {
-            ID = "divisionHeader",
+            ID = "Sim-SkipIntroByCross-divisionHeader.png",
             Width = 1008,
             Height = 188,
             Hash = 1073708927
@@ -43,7 +27,7 @@ namespace PS4Macro.PES2018Lite.Sim
 
         private static RectMap divisionFooter = new RectMap()
         {
-            ID = "divisionFooter",
+            ID = "Sim-SkipIntroByCross-divisionFooter.png",
             X = 0,
             Y = 566,
             Width = 1008,
@@ -51,17 +35,9 @@ namespace PS4Macro.PES2018Lite.Sim
             Hash = 9187167584464666624
         };
 
-        private static RectMap teamDescription = new RectMap()
-        {
-            ID = "teamDescription",
-            Width = 1008,
-            Height = 729,
-            Hash = 2320398559706880
-        };
-
         private static RectMap teamDescriptionFocus = new RectMap()
         {
-            ID = "teamDescriptionFocus",
+            ID = "Sim-SkipIntroByCross-teamDescriptionFocus.png",
             X = 438,
             Y = 111,
             Width = 133,

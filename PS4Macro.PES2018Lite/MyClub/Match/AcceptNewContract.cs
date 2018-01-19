@@ -10,7 +10,7 @@ namespace PS4Macro.PES2018Lite.Match
 
         private static RectMap extension = new RectMap()
         {
-            ID = "extension",
+            ID = "Match-AcceptNewContract-extension.png",
             Width = 1008,
             Height = 729,
             Hash = 68442442891264
@@ -18,7 +18,7 @@ namespace PS4Macro.PES2018Lite.Match
 
         private static RectMap extensionFocusHeader = new RectMap()
         {
-            ID = "extensionFocusHeader",
+            ID = "Match-AcceptNewContract-extensionHeader.png",
             X = 255,
             Y = 229,
             Width = 495,

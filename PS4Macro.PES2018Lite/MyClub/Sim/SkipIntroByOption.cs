@@ -8,8 +8,8 @@ namespace PS4Macro.PES2018Lite.Sim
         public override string Name => "Sim : Skip Intro By Option";
 
         private static RectMap teamName = new RectMap()
-        {
-            ID = "teamName",
+        { /* WARNING !! I DO NOT FIND THE FILE I USED ! OUPS ! */
+            ID = "Sim-SkipIntroByOption-teamName",
             Width = 1008,
             Height = 729,
             Hash = 280923064987648

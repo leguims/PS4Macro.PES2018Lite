@@ -7,9 +7,9 @@ namespace PS4Macro.PES2018Lite.Match
     {
         public override string Name => "Match : Skip Major Events";
 
-        private static RectMap majorEvents = new RectMap()
+        private static RectMap majorEventsFocus = new RectMap()
         {
-            ID = "majorEvents",
+            ID = "Match-SkipMajorEvent-majorEventsFocus",
             X = 56,
             Y = 128,
             Width = 171,
@@ -20,9 +20,9 @@ namespace PS4Macro.PES2018Lite.Match
         public override bool Match(ScriptBase script)
         {
             /* DEBUG */
-            Log.LogMatchTemplate(script, Name, new List<RectMap> { majorEvents });
+            Log.LogMatchTemplate(script, Name, new List<RectMap> { majorEventsFocus });
 
-            return script.MatchTemplate(majorEvents, 98);
+            return script.MatchTemplate(majorEventsFocus, 98);
         }
 
         public override void OnMatched(ScriptBase script)

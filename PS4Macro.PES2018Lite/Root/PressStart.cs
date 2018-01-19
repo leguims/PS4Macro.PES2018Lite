@@ -16,7 +16,7 @@ namespace PS4Macro.PES2018Lite.Root
         private static RectMap pressStartScreen = new RectMap()
         {
             /* Remote screen size : 1024 x 768 */
-            ID = "pressStartScreen",
+            ID = "Root-PressStart-pressStartScreen.png",
             Width = 1008,
             Height = 729,
             Hash = 140737488291840

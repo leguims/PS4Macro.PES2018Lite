@@ -1,4 +1,5 @@
 ﻿using PS4MacroAPI;
+using System.Threading;
 using System.Collections.Generic;
 
 namespace PS4Macro.PES2018Lite.Match
@@ -7,17 +8,9 @@ namespace PS4Macro.PES2018Lite.Match
     {
         public override string Name => "Match : Switch to data rendering";
 
-        private static RectMap classic = new RectMap()
-        {
-            ID = "classic",
-            Width = 1008,
-            Height = 729,
-            Hash = 140737488322304
-        };
-
         private static RectMap classicFocus = new RectMap()
         {
-            ID = "classic",
+            ID = "Match-SwitchDataRender-classicFocus.png",
             X = 796,
             Y = 139,
             Width = 157,
@@ -27,7 +20,7 @@ namespace PS4Macro.PES2018Lite.Match
 
         private static RectMap data = new RectMap()
         {
-            ID = "data",
+            ID = "Match-SwitchDataRender-data.png",
             Width = 1008,
             Height = 729,
             Hash = 131270902251264
@@ -36,20 +29,31 @@ namespace PS4Macro.PES2018Lite.Match
         public override bool Match(ScriptBase script)
         {
             /* DEBUG */
-            //Log.LogIt(script, Name, new List<RectMap> { classicFocus, data });
-            Log.LogMatchTemplate(script, Name, new List<RectMap> { classicFocus });
+            Log.LogMatchTemplate(script, Name, new List<RectMap> { classicFocus, data });
 
-            return script.MatchTemplate(classicFocus, 98) && !script.MatchTemplate(data, 98);
+            return script.MatchTemplate(classicFocus, 98) && !script.MatchTemplate(data, 98)    /* classic screen */
+                || !script.MatchTemplate(classicFocus, 98) && script.MatchTemplate(data, 98);   /* data screen */
         }
 
         public override void OnMatched(ScriptBase script)
         {
-            script.Press(new DualShockState() { Triangle = true });
-            /* To restart AutomateMatch next time */
-            MyClub.Sim.AutomateMatch.Instance.MatchDone();
+            if(script.MatchTemplate(classicFocus, 98) && !script.MatchTemplate(data, 98))
+            {
+                script.Press(new DualShockState() { Triangle = true });
+                /* To restart AutomateMatch next time */
+                MyClub.Sim.AutomateMatch.Instance.MatchDone();
 
-            /* Register Match and date */
-            Log.Log2File(Name, "Starting match");
+                /* Register Match and date */
+                Log.Log2File(Name, "Starting match");
+
+            }
+            else if(!script.MatchTemplate(classicFocus, 98) && script.MatchTemplate(data, 98))
+            {
+                /* To keep PS4 alive while waiting end of match */
+                script.Press(new DualShockState() { Square = true });
+                Log.LogMessage(Name, "Waiting end of match ...");
+                Thread.Sleep(5000);
+            }
         }
     }
 }

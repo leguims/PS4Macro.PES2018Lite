@@ -8,27 +8,9 @@ namespace PS4Macro.PES2018Lite.Root
     {
         public override string Name => "Root : Launch 'MyClub'";
 
-        private static RectMap myClub = new RectMap()
-        {
-            ID = "myClub",
-            Width = 1008,
-            Height = 729,
-            Hash = 31336081358592
-        };
-
         private static RectMap myClubFocus = new RectMap()
         {
-            ID = "myClubFocus",
-            X = 55,
-            Y = 190,
-            Width = 289,
-            Height = 361,
-            Hash = 18859096170037247
-        };
-
-        private static RectMap myClubFocus2 = new RectMap()
-        {
-            ID = "myClubFocus2",
+            ID = "Root-LaunchMyClub-myClubFocus.png",
             X = 62,
             Y = 322,
             Width = 75,
@@ -36,17 +18,9 @@ namespace PS4Macro.PES2018Lite.Root
             Hash = 9220964140883935103
         };
 
-        private static RectMap noOnlineUpdate = new RectMap()
-        {
-            ID = "noOnlineUpdate",
-            Width = 1008,
-            Height = 729,
-            Hash = 26938026426368
-        };
-
         private static RectMap noOnlineUpdateFocus = new RectMap()
         {
-            ID = "noOnlineUpdateFocus",
+            ID = "Root-LaunchMyClub-noOnlineUpdateFocus.png",
             X = 261,
             Y = 292,
             Width = 485,
@@ -56,7 +30,7 @@ namespace PS4Macro.PES2018Lite.Root
 
         private static RectMap eventNewYearFocus = new RectMap()
         {
-            ID = "eventNewYearFocus",
+            ID = "Root-LaunchMyClub-eventNewYearFocus.png",
             X = 444,
             Y = 506,
             Width = 120,
@@ -66,7 +40,7 @@ namespace PS4Macro.PES2018Lite.Root
 
         private static RectMap dailyBonusFocus = new RectMap()
         {
-            ID = "dailyBonusFocus",
+            ID = "Root-LaunchMyClub-dailyBonusFocus.png",
             X = 409,
             Y = 151,
             Width = 191,
@@ -77,9 +51,9 @@ namespace PS4Macro.PES2018Lite.Root
         public override bool Match(ScriptBase script)
         {
             /* DEBUG */
-            Log.LogMatchTemplate(script, Name, new List<RectMap> { myClubFocus2, noOnlineUpdateFocus, eventNewYearFocus, dailyBonusFocus });
+            Log.LogMatchTemplate(script, Name, new List<RectMap> { myClubFocus, noOnlineUpdateFocus, eventNewYearFocus, dailyBonusFocus });
 
-            return script.MatchTemplate(myClubFocus2, 98) || script.MatchTemplate(noOnlineUpdateFocus, 98)
+            return script.MatchTemplate(myClubFocus, 98) || script.MatchTemplate(noOnlineUpdateFocus, 98)
                 || script.MatchTemplate(eventNewYearFocus, 98) || script.MatchTemplate(dailyBonusFocus, 98);
         }
 

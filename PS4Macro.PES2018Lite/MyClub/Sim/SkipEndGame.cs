@@ -7,38 +7,32 @@ namespace PS4Macro.PES2018Lite.Sim
     {
         public override string Name => "Sim : Skip End-Game";
 
-        private static RectMap division = new RectMap()
+        private static RectMap divisionHeaderFocus = new RectMap()
         {
-            ID = "division",
-            Width = 1008,
-            Height = 729,
-            Hash = 68719468314368
+            ID = "Sim-SkipEndGame-divisionHeaderFocus.png",
+            X = 410,
+            Y = 150,
+            Width = 190,
+            Height = 30,
+            Hash = 35043082688757504
         };
 
-        private static RectMap divisionHeader = new RectMap()
+        private static RectMap divisionFooterFocus = new RectMap()
         {
-            ID = "divisionHeader",
-            Width = 1008,
-            Height = 188,
-            Hash = 1073708927
-        };
-
-        private static RectMap divisionFooter = new RectMap()
-        {
-            ID = "divisionFooter",
-            X = 0,
-            Y = 566,
-            Width = 1008,
-            Height = 163,
-            Hash = 9187062031147073536
+            ID = "Sim-SkipEndGame-divisionFooterFocus.png",
+            X = 70,
+            Y = 595,
+            Width = 100,
+            Height = 30,
+            Hash = 123692902203392
         };
 
         public override bool Match(ScriptBase script)
         {
             /* DEBUG */
-            Log.LogMatchTemplate(script, Name, new List<RectMap> { divisionHeader, divisionFooter });
+            Log.LogMatchTemplate(script, Name, new List<RectMap> { divisionHeaderFocus, divisionFooterFocus }, 95);
 
-            return script.MatchTemplate(divisionHeader, 98) && script.MatchTemplate(divisionFooter, 98);
+            return script.MatchTemplate(divisionHeaderFocus, 95) && script.MatchTemplate(divisionFooterFocus, 95);
         }
 
         public override void OnMatched(ScriptBase script) => script.Press(new DualShockState() { Cross = true });

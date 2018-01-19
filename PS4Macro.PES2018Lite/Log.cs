@@ -14,7 +14,7 @@ namespace PS4Macro.PES2018Lite
         public enum Level { debug, info, error, critic };
         private static Level _level = Level.debug;
         public static bool Debug() { return _debug; }
-        public static void LogMatchTemplate(ScriptBase script, string name, List<RectMap> listRectMap)
+        public static void LogMatchTemplate(ScriptBase script, string name, List<RectMap> listRectMap, int similarity = 98)
         {
             if (_debug)
             {
@@ -22,12 +22,12 @@ namespace PS4Macro.PES2018Lite
                 System.Diagnostics.Debug.WriteLine("{0}", name);    /* to print to "Output" console in Visual Studio. */
                 foreach (var item in listRectMap)
                 {
-                    if (script.MatchTemplate(item, 98))
+                    if (script.MatchTemplate(item, similarity))
                     {
                         if (_level <= Level.info)
                         {
-                            Console.WriteLine("\t*** RectMap '{1}' return {2}", name, item.ID, script.MatchTemplate(item, 98).ToString());                     /* to print to the built-in console */
-                            System.Diagnostics.Debug.WriteLine("\t RectMap '{1}' return {2}", name, item.ID, script.MatchTemplate(item, 98).ToString());    /* to print to "Output" console in Visual Studio. */
+                            Console.WriteLine("\t*** RectMap '{1}' return {2}", name, item.ID, script.MatchTemplate(item, similarity).ToString());                     /* to print to the built-in console */
+                            System.Diagnostics.Debug.WriteLine("\t RectMap '{1}' return {2}", name, item.ID, script.MatchTemplate(item, similarity).ToString());    /* to print to "Output" console in Visual Studio. */
                         }
                     }
                     else 
@@ -45,7 +45,7 @@ namespace PS4Macro.PES2018Lite
             }
         }
 
-        public static void LogMatchTemplate(ScriptBase script, string name, List<PixelMap> listPixelMap)
+        public static void LogMatchTemplate(ScriptBase script, string name, List<PixelMap> listPixelMap, int similarity = 98)
         {
             if (_debug)
             {
@@ -53,12 +53,12 @@ namespace PS4Macro.PES2018Lite
                 System.Diagnostics.Debug.WriteLine("{0}", name);    /* to print to "Output" console in Visual Studio. */
                 foreach (var item in listPixelMap)
                 {
-                    if (script.MatchTemplate(item, 98))
+                    if (script.MatchTemplate(item, similarity))
                     {
                         if (_level <= Level.info)
                         {
-                            Console.WriteLine("\t*** PixelMap '{1}' return {2}", name, item.ID, script.MatchTemplate(item, 98).ToString());                     /* to print to the built-in console */
-                            System.Diagnostics.Debug.WriteLine("\tPixelMap '{1}' return {2}", name, item.ID, script.MatchTemplate(item, 98).ToString());    /* to print to "Output" console in Visual Studio. */
+                            Console.WriteLine("\t*** PixelMap '{1}' return {2}", name, item.ID, script.MatchTemplate(item, similarity).ToString());                     /* to print to the built-in console */
+                            System.Diagnostics.Debug.WriteLine("\tPixelMap '{1}' return {2}", name, item.ID, script.MatchTemplate(item, similarity).ToString());    /* to print to "Output" console in Visual Studio. */
                         }
                     }
                     else

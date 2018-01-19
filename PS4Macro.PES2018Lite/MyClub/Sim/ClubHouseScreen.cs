@@ -8,17 +8,9 @@ namespace PS4Macro.PES2018Lite.Sim
     {
         public override string Name => "Sim : Club House Screen";
 
-        private static RectMap clubHouse = new RectMap()
-        {
-            ID = "clubHouse",
-            Width = 1008,
-            Height = 729,
-            Hash = 33535104614144
-        };
-
         private static RectMap clubHouseFocus = new RectMap()
         {
-            ID = "clubHouseFocus",
+            ID = "Sim-ClubHouseScreen-clubHouseFocus.png",
             X = 280,
             Y = 160,
             Width = 223,
@@ -32,24 +24,6 @@ namespace PS4Macro.PES2018Lite.Sim
             X = 315,
             Y = 168,
             Color = 0xbcc4c4
-        };
-
-        private static RectMap manageTeam = new RectMap()
-        {
-            ID = "manageTeam",
-            Width = 1008,
-            Height = 729,
-            Hash = 33535104614144
-        };
-
-        private static RectMap manageTeamFocus = new RectMap()
-        {
-            ID = "manageTeamFocus",
-            X = 368,
-            Y = 321,
-            Width = 227,
-            Height = 24,
-            Hash = 9187070900410728319
         };
 
         private static PixelMap playNowSelected = new PixelMap()
