@@ -11,7 +11,7 @@ namespace PS4Macro.PES2018Lite.Root
 
         public override bool Match(ScriptBase script)
         {
-            Log.LogMessage(Name, "##############################################################");
+            Log.LogMessage(Name, "### " + DateTime.Now.ToString() + " ###########################################################");
 
             return false;
         }
