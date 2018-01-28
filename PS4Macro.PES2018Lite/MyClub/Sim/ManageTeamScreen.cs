@@ -157,12 +157,19 @@ namespace PS4Macro.PES2018Lite.Sim
 
         private void SwitchTeam(ScriptBase script, MyClub.Sim.AutomateMatch.Team team)
         {
+            script.Press(new DualShockState() { Triangle = true });
+            script.Press(new DualShockState() { DPad_Down = true });
+            script.Press(new DualShockState() { Cross = true });
+            /*while (!script.MatchTemplate(script.CaptureFrame(), ????, 98))
+            {
+                Thread.Sleep(1000);
+                Log.LogMessage(Name, "Waiting for 'Select team menu'");
+            }*/
+            // TODO : CAPTURE THE PICTURE !!
+            Thread.Sleep(5000);
+
             if (team == MyClub.Sim.AutomateMatch.Team.winTwo)
             {
-                script.Press(new DualShockState() { Triangle = true });
-                script.Press(new DualShockState() { DPad_Down = true });
-                script.Press(new DualShockState() { Cross = true });
-                Thread.Sleep(5000);
                 /* Select Team.win2 - Add short pause between same key */
                 script.Press(new DualShockState() { DPad_Down = true });
                 Thread.Sleep(100);
@@ -171,10 +178,6 @@ namespace PS4Macro.PES2018Lite.Sim
             }
             if (team == MyClub.Sim.AutomateMatch.Team.winOne)
             {
-                script.Press(new DualShockState() { Triangle = true });
-                script.Press(new DualShockState() { DPad_Down = true });
-                script.Press(new DualShockState() { Cross = true });
-                Thread.Sleep(5000);
                 /* Select Team.win1 - Add short pause between same key */
                 script.Press(new DualShockState() { DPad_Down = true });
                 Thread.Sleep(100);
@@ -185,20 +188,12 @@ namespace PS4Macro.PES2018Lite.Sim
             }
              if (team == MyClub.Sim.AutomateMatch.Team.loseTwo)
             {
-                script.Press(new DualShockState() { Triangle = true });
-                script.Press(new DualShockState() { DPad_Down = true });
-                script.Press(new DualShockState() { Cross = true });
-                Thread.Sleep(5000);
                 /* Select Team.lose2 - Add short pause between same key */
                 script.Press(new DualShockState() { DPad_Down = true });
                 script.Press(new DualShockState() { Cross = true });
             }
             else if (team == MyClub.Sim.AutomateMatch.Team.loseOne)
             {
-                script.Press(new DualShockState() { Triangle = true });
-                script.Press(new DualShockState() { DPad_Down = true });
-                script.Press(new DualShockState() { Cross = true });
-                Thread.Sleep(5000);
                 /* Select Team.lose1 - Add short pause between same key */
                 script.Press(new DualShockState() { DPad_Down = true });
                 Thread.Sleep(100);

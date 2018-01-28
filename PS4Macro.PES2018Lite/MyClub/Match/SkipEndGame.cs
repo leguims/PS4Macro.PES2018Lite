@@ -93,6 +93,16 @@ namespace PS4Macro.PES2018Lite.Match
             Hash = 9187201402835861375
         };
 
+        private static RectMap seasonMaintainEarningsFocus = new RectMap()
+        {
+            ID = "Match-SkipEndGame-seasonMaintain-earningsFocus.png",
+            X = 399,
+            Y = 189,
+            Width = 210,
+            Height = 21,
+            Hash = 9187201403311389034
+        };
+
         private static RectMap seasonPromoteFocus = new RectMap()
         {
             ID = "Match-SkipEndGame-seasonPromoteFocus.png",
@@ -107,14 +117,15 @@ namespace PS4Macro.PES2018Lite.Match
         {
             /* DEBUG */
             Log.LogMatchTemplate(script, Name, new List<RectMap> { stats1FocusFooter, experience, experienceLevelUpFocus, teamRankFocus,
-                earnings1Focus, earnings2Focus, managerExtensionOption, seasonResultsFocus, seasonMaintainFocus, seasonPromoteFocus });
+                earnings1Focus, earnings2Focus, managerExtensionOption, seasonResultsFocus, seasonMaintainFocus, seasonMaintainEarningsFocus, seasonPromoteFocus });
 
             return script.MatchTemplate(stats1FocusFooter, 98) 
                 || script.MatchTemplate(experience, 98) 
                 || script.MatchTemplate(experienceLevelUpFocus, 98) || script.MatchTemplate(teamRankFocus, 98)
                 || script.MatchTemplate(earnings1Focus, 98) || script.MatchTemplate(earnings2Focus, 98)
                 || script.MatchTemplate(managerExtensionOption, 98) || script.MatchTemplate(seasonResultsFocus, 98)
-                || script.MatchTemplate(seasonMaintainFocus, 98) || script.MatchTemplate(seasonPromoteFocus, 98);
+                || script.MatchTemplate(seasonMaintainFocus, 98) || script.MatchTemplate(seasonMaintainEarningsFocus, 98) 
+                || script.MatchTemplate(seasonPromoteFocus, 98);
         }
 
         public override void OnMatched(ScriptBase script) => script.Press(new DualShockState() { Cross = true });
