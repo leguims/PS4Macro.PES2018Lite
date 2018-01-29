@@ -128,6 +128,20 @@ namespace PS4Macro.PES2018Lite.Match
                 || script.MatchTemplate(seasonPromoteFocus, 98);
         }
 
-        public override void OnMatched(ScriptBase script) => script.Press(new DualShockState() { Cross = true });
+        public override void OnMatched(ScriptBase script)
+        {
+            script.Press(new DualShockState() { Cross = true });
+
+            if (script.MatchTemplate(seasonMaintainFocus, 98))
+            {
+                /* Register End of season & date */
+                Log.Log2File(Name, "End of season : Maintain");
+            }
+            else if (script.MatchTemplate(seasonPromoteFocus, 98))
+            {
+                /* Register End of season & date */
+                Log.Log2File(Name, "End of season : Promote");
+            }
+        }
     }
 }

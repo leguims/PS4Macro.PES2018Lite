@@ -45,7 +45,6 @@ namespace PS4Macro.PES2018Lite.Match
 
                 /* Register Match and date */
                 Log.Log2File(Name, "Starting match");
-
             }
             else if(!script.MatchTemplate(classicFocus, 98) && script.MatchTemplate(data, 98))
             {
