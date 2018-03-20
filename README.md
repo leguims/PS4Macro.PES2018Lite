@@ -64,7 +64,7 @@ I give you an example for "Root-LaunchMyClub-myClubFocus.png":
     ```
 1. Case "**XXX.png**" :
     1. Take the picture as it is.
-1. Case "**XXX**Focus**.png**" :
+1. Case "XXX**Focus**.png" :
     1. Crop the picture to have the "Focus" version
     1. Take coordonate of the focus part : X, Y is for the left-upper corner of area to crop.
     1. Take size of the focus part : Width, Height is for the width and height of area to crop.
