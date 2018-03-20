@@ -43,13 +43,43 @@ In "class ManageTeamScreen", you have to adjust (X, Y) coordinates with your clu
 
 In "class ManageTeamScreen", you have to modify the method "SwitchTeam" to adjust the number of "digital pad down" to apply to select each team.
 
+## Translate another version
+
+I give you an example for "Root-LaunchMyClub-myClubFocus.png":
+
+1. If file is named like "XXX**Focus**.png", it means that is a focused part of the file "XXX.png". In this example, "Root-LaunchMyClub-myClub**Focus**.png" is a part of "**Root-LaunchMyClub-myClub.png**".
+1. You have to make the screenshot of your PES version as same as possible of "**Root-LaunchMyClub-myClub.png**".
+1. Search which C# file uses the screenshot "**Root-LaunchMyClub-myClubFocus.png**" :arrow_right: **PS4Macro.PES2018Lite\PS4Macro.PES2018Lite\Root\LaunchMyClub.cs**
+1. Find the RectMap using this picture :arrow_right: **myClubFocus**
+    ```csharp
+            private static RectMap myClubFocus = new RectMap()
+            {
+                ID = "Root-LaunchMyClub-myClubFocus.png",
+                X = 62,
+                Y = 322,
+                Width = 75,
+                Height = 25,
+                Hash = 9220964140883935103
+            };
+    ```
+1. Case "**XXX.png**" :
+    1. Take the picture as it is.
+1. Case "**XXX**Focus**.png**" :
+    1. Crop the picture to have the "Focus" version
+    1. Take coordonate of the focus part : X, Y is for the left-upper corner of area to crop.
+    1. Take size of the focus part : Width, Height is for the width and height of area to crop.
+1. This picture, is the one to use with de PS4Macro tools to compute checksum.
+1. Update the attribute "Hash" in the RectMap with your own checksum .
+
+Now, the program is updated with your own screenshot.
+
 ## To-Do List
 
-- Rename picture name for traceability to C# code.
-- Stop play when cash is lower than 10.000
-- Display history (cash, renew players name/cost, match score, list of opponent players/level, cash earning)
-- Display debug on nice window
-- Use OCR instead of picture recognition
+- [x] Rename picture name for traceability to C# code.
+- [ ] Stop play when cash is lower than 10.000
+- [ ] Display history (cash, renew players name/cost, match score, list of opponent players/level, cash earning)
+- [ ] Display debug on nice window
+- [ ] Use OCR instead of picture recognition
 
 
 ## Resources
