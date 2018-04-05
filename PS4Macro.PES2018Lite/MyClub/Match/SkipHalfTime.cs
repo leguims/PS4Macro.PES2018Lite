@@ -14,37 +14,37 @@ namespace PS4Macro.PES2018Lite.Match
             Y = 156,
             Width = 86,
             Height = 22,
-            Hash = 229797921753856
+            Hash = 8020935033954304
         };
 
         private static RectMap stats1Goals = new RectMap()
         {
             ID = "Match-SkipHalfTime-stats1Goals.png",
-            X = 480,
+            X = 460,
             Y = 200,
-            Width = 50,
-            Height = 15,
-            Hash = 13577036912016896
+            Width = 40,
+            Height = 16,
+            Hash = 27161783340850944
         };
 
         private static RectMap stats2Header = new RectMap()
         {
             ID = "Match-SkipHalfTime-stats2Header.png",
             X = 455,
-            Y = 113,
-            Width = 99,
-            Height = 27,
-            Hash = 27161783340859138
+            Y = 115,
+            Width = 43,
+            Height = 20,
+            Hash = 28542769676910350
         };
 
         private static RectMap stats2SecondeHalftime = new RectMap()
         {
             ID = "Match-SkipHalfTime-stats2SecondeHalftime.png",
-            X = 464,
-            Y = 512,
-            Width = 80,
-            Height = 70,
-            Hash = 7197829459242090367
+            X = 475,
+            Y = 565,
+            Width = 60,
+            Height = 15,
+            Hash = 9187201713574586751
         };
 
         public override bool Match(ScriptBase script)
@@ -52,10 +52,10 @@ namespace PS4Macro.PES2018Lite.Match
             /* DEBUG */
             Log.LogMatchTemplate(script, Name, new List<RectMap> { stats1Header, stats1Goals, stats2Header, stats2SecondeHalftime });
 
-            return script.MatchTemplate(stats1Header, 98) && script.MatchTemplate(stats1Goals, 98)
-                || script.MatchTemplate(stats2Header, 98) && script.MatchTemplate(stats2SecondeHalftime, 98);
+            return script.MatchTemplate(stats1Header, 95) && script.MatchTemplate(stats1Goals, 95)
+                || script.MatchTemplate(stats2Header, 95) && script.MatchTemplate(stats2SecondeHalftime, 95);
         }
 
-        public override void OnMatched(ScriptBase script) => script.Press(new DualShockState() { Cross = true });
+        public override void OnMatched(ScriptBase script) => script.Press(new DualShockState() { Circle = true });
     }
 }

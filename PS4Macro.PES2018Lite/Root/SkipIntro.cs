@@ -65,6 +65,6 @@ namespace PS4Macro.PES2018Lite.Root
                 || script.MatchTemplate(onlineUpdatePlayersFocus, 98);
         }
 
-        public override void OnMatched(ScriptBase script) => script.Press(new DualShockState() { Cross = true });
+        public override void OnMatched(ScriptBase script) => script.Press(new DualShockState() { Circle = true });
     }
 }

@@ -19,61 +19,61 @@ namespace PS4Macro.PES2018Lite.Match
         private static RectMap extensionFocusHeader_1player = new RectMap()
         {
             ID = "Match-AcceptNewContract-extensionHeader.png (Y offset = 1 player)",
-            X = 255,
-            Y = 241,
-            Width = 495,
-            Height = 90,
-            Hash = 28006088003583871
+            X = 280,
+            Y = 250,
+            Width = 445,
+            Height = 77,
+            Hash = 18436058593034367
         };
 
         private static RectMap extensionFocusHeader_2players = new RectMap()
         {
             ID = "Match-AcceptNewContract-extensionHeader.png (Y offset = 2 players)",
-            X = 255,
-            Y = 229,
-            Width = 495,
-            Height = 90,
-            Hash = 28006088003583871
+            X = 280,
+            Y = 238,
+            Width = 445,
+            Height = 77,
+            Hash = 18436058593034367
         };
 
         private static RectMap extensionFocusHeader_3players = new RectMap()
         {
             ID = "Match-AcceptNewContract-extensionHeader.png (Y offset = 3 players)",
-            X = 255,
-            Y = 217,
-            Width = 495,
-            Height = 90,
-            Hash = 28006088003583871
+            X = 280,
+            Y = 226,
+            Width = 445,
+            Height = 77,
+            Hash = 18436058593034367
         };
 
         private static RectMap extensionFocusHeader_4players = new RectMap()
         {
             ID = "Match-AcceptNewContract-extensionHeader.png (Y offset = 4 players)",
-            X = 255,
-            Y = 205,
-            Width = 495,
-            Height = 90,
-            Hash = 28006088003583871
+            X = 280,
+            Y = 214,
+            Width = 445,
+            Height = 77,
+            Hash = 18436058593034367
         };
 
         private static RectMap extensionFocusHeader_5players = new RectMap()
         {
             ID = "Match-AcceptNewContract-extensionHeader.png (Y offset = 5 players)",
-            X = 255,
-            Y = 193,
-            Width = 495,
-            Height = 90,
-            Hash = 28006088003583871
+            X = 280,
+            Y = 202,
+            Width = 445,
+            Height = 77,
+            Hash = 18436058593034367
         };
 
         private static RectMap extensionFocusHeader_6players = new RectMap()
         {
             ID = "Match-AcceptNewContract-extensionHeader.png (Y offset = 6 players)",
-            X = 255,
-            Y = 181,
-            Width = 495,
-            Height = 90,
-            Hash = 28006088003583871
+            X = 280,
+            Y = 190,
+            Width = 445,
+            Height = 77,
+            Hash = 18436058593034367
         };
 
         private static RectMap extension2Focus = new RectMap()
@@ -83,7 +83,7 @@ namespace PS4Macro.PES2018Lite.Match
             Y = 464,
             Width = 146,
             Height = 19,
-            Hash = 9186919927859150719
+            Hash = 6736629958325665663
         };
 
         private static RectMap extension3Focus = new RectMap()
@@ -93,7 +93,7 @@ namespace PS4Macro.PES2018Lite.Match
             Y = 377,
             Width = 47,
             Height = 23,
-            Hash = 9187131120130015615
+            Hash = 9214320589802684927
         };
 
         private static RectMap extension4Focus = new RectMap()
@@ -156,7 +156,7 @@ namespace PS4Macro.PES2018Lite.Match
             Log.LogMessage(Name, "Start");
             // List of player to renew
             script.Press(new DualShockState() { DPad_Right = true });
-            script.Press(new DualShockState() { Cross = true });
+            script.Press(new DualShockState() { Circle = true });
             Log.LogMessage(Name, "Accept to renew players/Manager");
 
             // Cost and kind of money
@@ -165,7 +165,7 @@ namespace PS4Macro.PES2018Lite.Match
                 Thread.Sleep(1000);
                 Log.LogMessage(Name, "Waiting for 'Pay with GP money'");
             }
-            script.Press(new DualShockState() { Cross = true });
+            script.Press(new DualShockState() { Circle = true });
             Log.LogMessage(Name, "Pay with GP money");
 
             // Confirmation
@@ -175,7 +175,7 @@ namespace PS4Macro.PES2018Lite.Match
                 Log.LogMessage(Name, "Waiting for 'Confirm'");
             }
             script.Press(new DualShockState() { DPad_Right = true });
-            script.Press(new DualShockState() { Cross = true });
+            script.Press(new DualShockState() { Circle = true });
             Log.LogMessage(Name, "Confirm");
 
             // Transaction'status
@@ -184,7 +184,7 @@ namespace PS4Macro.PES2018Lite.Match
                 Thread.Sleep(1000);
                 Log.LogMessage(Name, "Waiting for 'Skip transaction status'");
             }
-            script.Press(new DualShockState() { Cross = true });
+            script.Press(new DualShockState() { Circle = true });
             Log.LogMessage(Name, "Skip transaction'status");
 
             /* Only for manager */
@@ -198,7 +198,7 @@ namespace PS4Macro.PES2018Lite.Match
                 }*/
                 // TODO : CAPTURE THE PICTURE !!
                 Thread.Sleep(5000);
-                script.Press(new DualShockState() { Cross = true });
+                script.Press(new DualShockState() { Circle = true });
                 Log.LogMessage(Name, "Skip transaction'status2");
             }
             Log.LogMessage(Name, "End");

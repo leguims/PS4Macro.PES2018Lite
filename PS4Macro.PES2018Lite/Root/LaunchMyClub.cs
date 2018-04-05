@@ -21,11 +21,11 @@ namespace PS4Macro.PES2018Lite.Root
         private static RectMap noOnlineUpdateFocus = new RectMap()
         {
             ID = "Root-LaunchMyClub-noOnlineUpdateFocus.png",
-            X = 261,
-            Y = 292,
-            Width = 485,
-            Height = 116,
-            Hash = 35887507618889571
+            X = 250,
+            Y = 300,
+            Width = 515,
+            Height = 106,
+            Hash = 140134037022583
         };
 
         private static RectMap eventNewYearFocus = new RectMap()
@@ -45,7 +45,7 @@ namespace PS4Macro.PES2018Lite.Root
             Y = 151,
             Width = 191,
             Height = 31,
-            Hash = 35887029006925695
+            Hash = 35887240286666623
         };
 
         public override bool Match(ScriptBase script)
@@ -57,6 +57,6 @@ namespace PS4Macro.PES2018Lite.Root
                 || script.MatchTemplate(eventNewYearFocus, 98) || script.MatchTemplate(dailyBonusFocus, 98);
         }
 
-        public override void OnMatched(ScriptBase script) => script.Press(new DualShockState() { Cross = true });
+        public override void OnMatched(ScriptBase script) => script.Press(new DualShockState() { Circle = true });
     }
 }

@@ -11,11 +11,11 @@ namespace PS4Macro.PES2018Lite.Match
         private static RectMap classicFocus = new RectMap()
         {
             ID = "Match-SwitchDataRender-classicFocus.png",
-            X = 796,
-            Y = 139,
-            Width = 157,
-            Height = 31,
-            Hash = 70916344070144
+            X = 803,
+            Y = 145,
+            Width = 92,
+            Height = 19,
+            Hash = 18144688481460032
         };
 
         private static RectMap data = new RectMap()

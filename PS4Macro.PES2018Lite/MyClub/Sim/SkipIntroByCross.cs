@@ -14,7 +14,7 @@ namespace PS4Macro.PES2018Lite.Sim
             Y = 301,
             Width = 286,
             Height = 20,
-            Hash = 9187192606750703487
+            Hash = 3998993059459137407
         };
 
         private static RectMap divisionHeader = new RectMap()
@@ -32,17 +32,17 @@ namespace PS4Macro.PES2018Lite.Sim
             Y = 566,
             Width = 1008,
             Height = 163,
-            Hash = 9187167584464666624
+            Hash = 9187062031147073536
         };
 
         private static RectMap teamDescriptionFocus = new RectMap()
         {
             ID = "Sim-SkipIntroByCross-teamDescriptionFocus.png",
-            X = 438,
+            X = 444,
             Y = 111,
-            Width = 133,
-            Height = 18,
-            Hash = 140185576636160
+            Width = 120,
+            Height = 17,
+            Hash = 18154584086118144
         };
 
         public override bool Match(ScriptBase script)
@@ -55,6 +55,6 @@ namespace PS4Macro.PES2018Lite.Sim
                 || script.MatchTemplate(teamDescriptionFocus, 98);
         }
 
-        public override void OnMatched(ScriptBase script) => script.Press(new DualShockState() { Cross = true });
+        public override void OnMatched(ScriptBase script) => script.Press(new DualShockState() { Circle = true });
     }
 }

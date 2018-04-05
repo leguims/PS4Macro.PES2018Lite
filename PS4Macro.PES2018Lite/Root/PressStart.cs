@@ -30,6 +30,6 @@ namespace PS4Macro.PES2018Lite.Root
             return script.MatchTemplate(pressStartScreen, 98);
         }
 
-        public override void OnMatched(ScriptBase script) => script.Press(new DualShockState() { Cross = true });
+        public override void OnMatched(ScriptBase script) => script.Press(new DualShockState() { Circle = true });
     }
 }

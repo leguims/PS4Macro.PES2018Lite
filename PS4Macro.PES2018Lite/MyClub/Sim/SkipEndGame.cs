@@ -22,9 +22,9 @@ namespace PS4Macro.PES2018Lite.Sim
             ID = "Sim-SkipEndGame-divisionFooterFocus.png",
             X = 70,
             Y = 595,
-            Width = 100,
+            Width = 85,
             Height = 30,
-            Hash = 123692902203392
+            Hash = 18142489458196480
         };
 
         public override bool Match(ScriptBase script)
@@ -35,6 +35,6 @@ namespace PS4Macro.PES2018Lite.Sim
             return script.MatchTemplate(divisionHeaderFocus, 95) && script.MatchTemplate(divisionFooterFocus, 95);
         }
 
-        public override void OnMatched(ScriptBase script) => script.Press(new DualShockState() { Cross = true });
+        public override void OnMatched(ScriptBase script) => script.Press(new DualShockState() { Circle = true });
     }
 }

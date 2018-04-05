@@ -15,7 +15,7 @@ namespace PS4Macro.PES2018Lite.Sim
             Y = 160,
             Width = 223,
             Height = 16,
-            Hash = 248651682955879295
+            Hash = 1108839211783644031
         };
 
         private static PixelMap clubHouseSelected = new PixelMap()
@@ -114,7 +114,7 @@ namespace PS4Macro.PES2018Lite.Sim
                     
                     if (script.MatchTemplate(manageTeamSelected, 98))
                     {
-                        script.Press(new DualShockState() { Cross = true });
+                        script.Press(new DualShockState() { Circle = true });
                         MyClub.Sim.AutomateMatch.Instance.SelectManageTeamDone();
                     }
                     else
@@ -125,7 +125,7 @@ namespace PS4Macro.PES2018Lite.Sim
 
                     if (script.MatchTemplate(playNowSelected, 98))
                     {
-                        script.Press(new DualShockState() { Cross = true });
+                        script.Press(new DualShockState() { Circle = true });
                         MyClub.Sim.AutomateMatch.Instance.LaunchMatchDone();
                     }
                     else
