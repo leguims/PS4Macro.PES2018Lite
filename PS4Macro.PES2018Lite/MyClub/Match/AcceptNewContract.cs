@@ -191,11 +191,11 @@ namespace PS4Macro.PES2018Lite.Match
             if (manager)
             {
                 // Transaction'status 2
-                while (!script.MatchTemplate(script.CaptureFrame(), extension5Focus, 98))
-                {
-                    Thread.Sleep(1000);
-                    Log.LogMessage(Name, "Waiting for 'Skip transaction status2'");
-                }
+                //while (!script.MatchTemplate(script.CaptureFrame(), extension5Focus, 98))
+                //{
+                //    Thread.Sleep(1000);
+                //    Log.LogMessage(Name, "Waiting for 'Skip transaction status2'");
+                //}
                 // TODO : CAPTURE THE PICTURE !!
                 Thread.Sleep(5000);
                 script.Press(new DualShockState() { Circle = true });
