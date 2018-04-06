@@ -110,11 +110,11 @@ namespace PS4Macro.PES2018Lite.Match
         {
             // TODO : CAPTURE THE PICTURE !!
             ID = "Match-AcceptNewContract-extension5Focus.png",
-            X = 1,
-            Y = 2,
-            Width = 1008,
-            Height = 729,
-            Hash = 68442442891264
+            X = 400,
+            Y = 200,
+            Width = 210,
+            Height = 40,
+            Hash = 35887507081559679
         };
 
         private static RectMap extensionManager = new RectMap()
@@ -128,11 +128,11 @@ namespace PS4Macro.PES2018Lite.Match
         private static RectMap extensionManagerFocusHeader = new RectMap()
         {
             ID = "Match-AcceptManagerNewContract-extensionHeader.png",
-            X = 278,
-            Y = 289,
-            Width = 450,
-            Height = 40,
-            Hash = 35747869642146625
+            X = 250,
+            Y = 280,
+            Width = 504,
+            Height = 54,
+            Hash = 35857275344085887
         };
 
         public override bool Match(ScriptBase script)
@@ -155,7 +155,7 @@ namespace PS4Macro.PES2018Lite.Match
 
             Log.LogMessage(Name, "Start");
             // List of player to renew
-            script.Press(new DualShockState() { DPad_Right = true });
+            script.Press(new DualShockState() { DPad_Right = false });
             script.Press(new DualShockState() { Circle = true });
             Log.LogMessage(Name, "Accept to renew players/Manager");
 
@@ -191,11 +191,11 @@ namespace PS4Macro.PES2018Lite.Match
             if (manager)
             {
                 // Transaction'status 2
-                /*while (!script.MatchTemplate(script.CaptureFrame(), extension5Focus, 98))
+                while (!script.MatchTemplate(script.CaptureFrame(), extension5Focus, 98))
                 {
                     Thread.Sleep(1000);
                     Log.LogMessage(Name, "Waiting for 'Skip transaction status2'");
-                }*/
+                }
                 // TODO : CAPTURE THE PICTURE !!
                 Thread.Sleep(5000);
                 script.Press(new DualShockState() { Circle = true });

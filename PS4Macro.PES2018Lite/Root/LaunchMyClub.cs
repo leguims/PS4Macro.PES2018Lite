@@ -35,7 +35,7 @@ namespace PS4Macro.PES2018Lite.Root
             Y = 506,
             Width = 120,
             Height = 27,
-            Hash = 9187131310043299967
+            Hash = 9187131034114809983
         };
 
         private static RectMap dailyBonusFocus = new RectMap()

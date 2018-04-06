@@ -174,6 +174,10 @@ namespace PS4Macro.PES2018Lite.Sim
                 script.Press(new DualShockState() { DPad_Down = true });
                 Thread.Sleep(100);
                 script.Press(new DualShockState() { DPad_Down = true });
+                Thread.Sleep(100);
+                script.Press(new DualShockState() { DPad_Down = true });
+                Thread.Sleep(100);
+                script.Press(new DualShockState() { DPad_Down = true });
                 script.Press(new DualShockState() { Circle = true });
             }
             if (team == MyClub.Sim.AutomateMatch.Team.winOne)
@@ -190,17 +194,13 @@ namespace PS4Macro.PES2018Lite.Sim
             {
                 /* Select Team.lose2 - Add short pause between same key */
                 script.Press(new DualShockState() { DPad_Down = true });
+                Thread.Sleep(100);
+                script.Press(new DualShockState() { DPad_Down = true });
                 script.Press(new DualShockState() { Circle = true });
             }
             else if (team == MyClub.Sim.AutomateMatch.Team.loseOne)
             {
                 /* Select Team.lose1 - Add short pause between same key */
-                script.Press(new DualShockState() { DPad_Down = true });
-                Thread.Sleep(100);
-                script.Press(new DualShockState() { DPad_Down = true });
-                Thread.Sleep(100);
-                script.Press(new DualShockState() { DPad_Down = true });
-                Thread.Sleep(100);
                 script.Press(new DualShockState() { DPad_Down = true });
                 script.Press(new DualShockState() { Circle = true });
             }

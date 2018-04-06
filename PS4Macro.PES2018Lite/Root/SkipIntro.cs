@@ -41,7 +41,7 @@ namespace PS4Macro.PES2018Lite.Root
             Y = 153,
             Width = 246,
             Height = 28,
-            Hash = 984610506751747
+            Hash = 984610506768131
         };
 
         private static RectMap onlineUpdatePlayersFocus = new RectMap()
@@ -51,7 +51,7 @@ namespace PS4Macro.PES2018Lite.Root
             Y = 144,
             Width = 896,
             Height = 42,
-            Hash = 8477777955094078
+            Hash = 8512962310340158
         };
 
         public override bool Match(ScriptBase script)

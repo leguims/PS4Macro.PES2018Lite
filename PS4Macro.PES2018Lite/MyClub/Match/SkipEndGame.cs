@@ -10,11 +10,11 @@ namespace PS4Macro.PES2018Lite.Match
         private static RectMap stats1FocusFooter = new RectMap()
         {
             ID = "Match-SkipEndGame-stats1FocusFooter.png",
-            X = 147,
-            Y = 507,
-            Width = 713,
-            Height = 78,
-            Hash = 4643051973110624103
+            X = 450,
+            Y = 115,
+            Width = 108,
+            Height = 24,
+            Hash = 35043082688757504
         };
 
         private static RectMap experience = new RectMap()
