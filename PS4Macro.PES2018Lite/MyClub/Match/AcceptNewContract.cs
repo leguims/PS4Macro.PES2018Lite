@@ -155,7 +155,7 @@ namespace PS4Macro.PES2018Lite.Match
 
             Log.LogMessage(Name, "Start");
             // List of player to renew
-            script.Press(new DualShockState() { DPad_Right = false });
+            script.Press(new DualShockState() { DPad_Right = true });
             script.Press(new DualShockState() { Circle = true });
             Log.LogMessage(Name, "Accept to renew players/Manager");
 
