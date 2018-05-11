@@ -1,6 +1,8 @@
-﻿# PS4Macro.PES2017
+﻿# PS4Macro.PES2018
 
 Bot script for PES2017 simulator mode using [PS4 Macro](https://github.com/komefai/PS4Macro).
+
+This project will end with new version of PES 2019. PES 2019 release date for PS4 is August 30 ([source](https://www.express.co.uk/entertainment/gaming/957401/PES-2019-release-date-PS4-Xbox-One-Switch-FIFA-19)).
 
 #### Screenshot
 
